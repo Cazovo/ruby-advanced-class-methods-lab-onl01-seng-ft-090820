@@ -33,8 +33,8 @@ class Song
   end
   
   def song.find_or_create_by_name(name)
-    song.find_by_name(name)
-    song.create_by_name(name)
+    self.find_by_name(name)
+    self.create_by_name(name)
   end
   
   def song.alphabetical()
@@ -43,15 +43,15 @@ class Song
   
   def song.new_from_filename(name)
     song = song.new
-    song.name = (name.split("-")[1].chomp(".mp3"))
-    song.artist_name = (name.split("-")[0])
+    self.name = (name.split("-")[1].chomp(".mp3"))
+    self.artist_name = (name.split("-")[0])
   end
   
   
   def song.create_from_filename(name)
     song = song.new
-    song.name = (name.split("-")[1].chomp(".mp3"))
-    song.artist_name = (name.split("-")[0])
+    self.name = (name.split("-")[1].chomp(".mp3"))
+    self.artist_name = (name.split("-")[0])
     @@all << song
     song
   end
