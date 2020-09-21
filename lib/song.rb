@@ -17,13 +17,13 @@ class Song
   
   def song.new_by_name(name)
     song = self.new
-    song.name = name
+    self.name = name
     song
   end
   
   def song.create_by_name(name)
     song = self.create
-    song.name = name
+    self.name = name
     @@all << song
     song
   end
@@ -42,14 +42,14 @@ class Song
   end
   
   def song.new_from_filename(name)
-    song = song.new
+    song = self.new
     self.name = (name.split("-")[1].chomp(".mp3"))
     self.artist_name = (name.split("-")[0])
   end
   
   
   def song.create_from_filename(name)
-    song = song.new
+    song = self.new
     self.name = (name.split("-")[1].chomp(".mp3"))
     self.artist_name = (name.split("-")[0])
     @@all << song
